@@ -16,7 +16,6 @@ class WelcomeViewController: UIViewController {
         let element = UILabel()
         element.textColor = UIColor(named: K.BrandColors.blue)
         element.font = .systemFont(ofSize: 50, weight: .black)
-        element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
     
@@ -37,12 +36,14 @@ class WelcomeViewController: UIViewController {
         
         setViews()
         setupConstraints()
+        animationText()
     }
     
     // MARK: - Set Views
     
     private func setViews() {
         view.backgroundColor = .white
+        navigationController?.navigationBar.tintColor = .systemYellow
         
         view.addSubview(titleLabel)
         view.addSubview(logInButton)
@@ -57,10 +58,27 @@ class WelcomeViewController: UIViewController {
         
     }
     
-    @objc private func buttonsTapped(_ sender: UIButton) {
-        let registerVC = RegisterViewController()
+    private func animationText() {
+        titleLabel.text = ""
+        let titleText = K.appName
         
-        navigationController?.pushViewController(registerVC, animated: true)
+        for letter in titleText.enumerated() {
+            Timer.scheduledTimer(withTimeInterval: 0.1 * Double(letter.offset), repeats: false) { _ in
+                self.titleLabel.text! += String(letter.element)
+            }
+        }
+    }
+    
+    @objc private func buttonsTapped(_ sender: UIButton) {
+        let nextVC = RegisterViewController()
+        
+        if sender.currentTitle == K.registerName {
+            nextVC.authorizationType = .register
+        } else if sender.currentTitle == K.logInName {
+            nextVC.authorizationType = .logIn
+        }
+        
+        navigationController?.pushViewController(nextVC, animated: true)
     }
     
 }
