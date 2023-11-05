@@ -14,6 +14,12 @@ struct K {
     static let emailName = "Email"
     static let passwordName = "Password"
     
+    static let enterButtonImageName = "paperplane.fill"
+    static let enterMessagePlaceholder = "Write a message..."
+    
+    static let meAvatar = "MeAvatar"
+    static let youAvatar = "YouAvatar"
+    
     static let cellIdentifier = "MessageCell"
     
     static let textfieldImageName = "textfield"

@@ -16,7 +16,7 @@ enum AuthorizationType: String {
 class RegisterViewController: UIViewController {
     
     // MARK: - UI
-   
+    
     private lazy var mainStackView: UIStackView = {
         let element = UIStackView()
         element.axis = .vertical
@@ -54,7 +54,7 @@ class RegisterViewController: UIViewController {
         
         setViews()
         setupConstraints()
-       
+        
     }
     
     // MARK: - Set Views
@@ -80,10 +80,18 @@ class RegisterViewController: UIViewController {
         mainStackView.addArrangedSubview(registerButton)
         
         emailTextField.makeShadow()
+        
+        registerButton.addTarget(self, action: #selector(buttonsTapped), for: .touchUpInside)
     }
     
     @objc private func buttonsTapped(_ sender: UIButton) {
-        
+        if sender.currentTitle == K.logInName {
+            let chatVC = ChatViewController()
+            
+            navigationController?.pushViewController(chatVC, animated: true)
+        } else {
+            print("register")
+        }
     }
     
 }
@@ -116,24 +124,4 @@ extension RegisterViewController {
     }
 }
 
-extension UIView {
-    func makeShadow() {
-        self.layer.shadowColor = UIColor.lightGray.cgColor
-        self.layer.shadowOpacity = 0.4
-        self.layer.shadowOffset = CGSize(width: 0, height: 10)
-        self.layer.shadowRadius = 10
-    }
-}
 
-extension UITextField {
-    convenience init(placeholder: String, color: UIColor?) {
-        self.init()
-        self.placeholder = placeholder
-        self.textAlignment = .center
-        self.backgroundColor = .white
-        self.layer.cornerRadius = 30
-        self.font = .systemFont(ofSize: 25)
-        self.textColor = color
-        self.tintColor = color
-    }
-}

@@ -16,6 +16,9 @@
 		79616E1D2AF412EE00DC98C2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 79616E1C2AF412EE00DC98C2 /* SnapKit */; };
 		79616E1F2AF412EE00DC98C2 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 79616E1E2AF412EE00DC98C2 /* SnapKit-Dynamic */; };
 		79616E212AF586F100DC98C2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616E202AF586F100DC98C2 /* RegisterViewController.swift */; };
+		79616E252AF79DBD00DC98C2 /* UIKit + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616E242AF79DBD00DC98C2 /* UIKit + Extensions.swift */; };
+		79616E272AF79E2800DC98C2 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616E262AF79E2800DC98C2 /* ChatViewController.swift */; };
+		79616E292AF7AE4500DC98C2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616E282AF7AE4500DC98C2 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		79616E132AF4077300DC98C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79616E192AF40EBA00DC98C2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		79616E202AF586F100DC98C2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		79616E242AF79DBD00DC98C2 /* UIKit + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit + Extensions.swift"; sourceTree = "<group>"; };
+		79616E262AF79E2800DC98C2 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		79616E282AF7AE4500DC98C2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,14 +70,41 @@
 			children = (
 				79616E052AF4077100DC98C2 /* AppDelegate.swift */,
 				79616E072AF4077100DC98C2 /* SceneDelegate.swift */,
-				79616E092AF4077100DC98C2 /* WelcomeViewController.swift */,
-				79616E202AF586F100DC98C2 /* RegisterViewController.swift */,
-				79616E192AF40EBA00DC98C2 /* Constants.swift */,
+				79616E2A2AF7AE4C00DC98C2 /* Model */,
+				79616E222AF79D8200DC98C2 /* Controllers */,
+				79616E232AF79DA000DC98C2 /* Helpers */,
 				79616E0E2AF4077300DC98C2 /* Assets.xcassets */,
 				79616E102AF4077300DC98C2 /* LaunchScreen.storyboard */,
 				79616E132AF4077300DC98C2 /* Info.plist */,
 			);
 			path = FlashChat;
+			sourceTree = "<group>";
+		};
+		79616E222AF79D8200DC98C2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				79616E092AF4077100DC98C2 /* WelcomeViewController.swift */,
+				79616E202AF586F100DC98C2 /* RegisterViewController.swift */,
+				79616E262AF79E2800DC98C2 /* ChatViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		79616E232AF79DA000DC98C2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				79616E192AF40EBA00DC98C2 /* Constants.swift */,
+				79616E242AF79DBD00DC98C2 /* UIKit + Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		79616E2A2AF7AE4C00DC98C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				79616E282AF7AE4500DC98C2 /* Message.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,7 +186,10 @@
 			files = (
 				79616E0A2AF4077100DC98C2 /* WelcomeViewController.swift in Sources */,
 				79616E212AF586F100DC98C2 /* RegisterViewController.swift in Sources */,
+				79616E252AF79DBD00DC98C2 /* UIKit + Extensions.swift in Sources */,
+				79616E272AF79E2800DC98C2 /* ChatViewController.swift in Sources */,
 				79616E062AF4077100DC98C2 /* AppDelegate.swift in Sources */,
+				79616E292AF7AE4500DC98C2 /* Message.swift in Sources */,
 				79616E082AF4077100DC98C2 /* SceneDelegate.swift in Sources */,
 				79616E1A2AF40EBA00DC98C2 /* Constants.swift in Sources */,
 			);
