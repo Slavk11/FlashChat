@@ -19,6 +19,7 @@
 		79616E252AF79DBD00DC98C2 /* UIKit + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616E242AF79DBD00DC98C2 /* UIKit + Extensions.swift */; };
 		79616E272AF79E2800DC98C2 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616E262AF79E2800DC98C2 /* ChatViewController.swift */; };
 		79616E292AF7AE4500DC98C2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616E282AF7AE4500DC98C2 /* Message.swift */; };
+		79616E2C2AF80A6C00DC98C2 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616E2B2AF80A6C00DC98C2 /* MessageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		79616E242AF79DBD00DC98C2 /* UIKit + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit + Extensions.swift"; sourceTree = "<group>"; };
 		79616E262AF79E2800DC98C2 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		79616E282AF7AE4500DC98C2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		79616E2B2AF80A6C00DC98C2 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				79616E052AF4077100DC98C2 /* AppDelegate.swift */,
+				79616E2D2AF80A7E00DC98C2 /* Views */,
 				79616E072AF4077100DC98C2 /* SceneDelegate.swift */,
 				79616E2A2AF7AE4C00DC98C2 /* Model */,
 				79616E222AF79D8200DC98C2 /* Controllers */,
@@ -105,6 +108,14 @@
 				79616E282AF7AE4500DC98C2 /* Message.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		79616E2D2AF80A7E00DC98C2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				79616E2B2AF80A6C00DC98C2 /* MessageCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +203,7 @@
 				79616E292AF7AE4500DC98C2 /* Message.swift in Sources */,
 				79616E082AF4077100DC98C2 /* SceneDelegate.swift in Sources */,
 				79616E1A2AF40EBA00DC98C2 /* Constants.swift in Sources */,
+				79616E2C2AF80A6C00DC98C2 /* MessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,6 +32,7 @@ class RegisterViewController: UIViewController {
     
     private lazy var imageView: UIImageView = {
         let element = UIImageView()
+        element.isUserInteractionEnabled = true
         element.image = UIImage(named: K.textfieldImageName)
         return element
     }()
@@ -80,6 +81,7 @@ class RegisterViewController: UIViewController {
         mainStackView.addArrangedSubview(registerButton)
         
         emailTextField.makeShadow()
+        passwordTextField.isSecureTextEntry = true
         
         registerButton.addTarget(self, action: #selector(buttonsTapped), for: .touchUpInside)
     }
