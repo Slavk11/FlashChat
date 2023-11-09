@@ -9,13 +9,12 @@ import UIKit
 import SnapKit
 import Firebase
 
-
 enum AuthorizationType: String {
     case register = "Register"
     case logIn = "Log In"
 }
 
-class RegisterViewController: UIViewController {
+final class RegisterViewController: UIViewController {
     
     // MARK: - UI
     
@@ -67,12 +66,14 @@ class RegisterViewController: UIViewController {
         case .register:
             view.backgroundColor = UIColor(named: K.BrandColors.lightBlue)
             registerButton.setTitle(K.registerName, for: .normal)
+            registerButton.setTitleColor(UIColor(named: K.BrandColors.blue), for: .normal)
         case .logIn:
             view.backgroundColor = UIColor(named: K.BrandColors.blue)
             registerButton.setTitle(K.logInName, for: .normal)
             registerButton.setTitleColor(.white, for: .normal)
             
             emailTextField.text = "1@1.com"
+            
         default: break
         }
         
@@ -89,36 +90,37 @@ class RegisterViewController: UIViewController {
     }
     
     @objc private func buttonsTapped(_ sender: UIButton) {
-          if sender.currentTitle == K.logInName {
-        
-        guard let email = emailTextField.text,
-              let password = passwordTextField.text else { return }
-        
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-            guard let self = self else { return }
-            if let e = error {
-                print(e.localizedDescription)
-            } else {
-                let chatVC = ChatViewController()
+        if sender.currentTitle == K.logInName {
+            
+            guard let email = emailTextField.text,
+                  let password = passwordTextField.text else { return }
+            
+            Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                guard let self = self else { return }
+                if let e = error {
+                    print(e.localizedDescription)
+                } else {
+                    let chatVC = ChatViewController()
+                    
+                    navigationController?.pushViewController(chatVC, animated: true)
+                }
                 
-                navigationController?.pushViewController(chatVC, animated: true)
             }
             
-        }
-    } else {
-        guard let email = emailTextField.text,
-              let password = passwordTextField.text else { return }
-        
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            if let e = error {
-                print(e.localizedDescription)
-            } else {
-                let chatVC = ChatViewController()
-                
-                self.navigationController?.pushViewController(chatVC, animated: true)
+        } else {
+            guard let email = emailTextField.text,
+                  let password = passwordTextField.text else { return }
+            
+            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                if let e = error {
+                    print(e.localizedDescription)
+                } else {
+                    let chatVC = ChatViewController()
+                    
+                    self.navigationController?.pushViewController(chatVC, animated: true)
+                }
             }
         }
-    }
     }
     
 }

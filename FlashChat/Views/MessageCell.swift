@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MessageCell: UITableViewCell {
+final class MessageCell: UITableViewCell {
     
     // MARK: - Elements
     
@@ -71,8 +71,8 @@ class MessageCell: UITableViewCell {
     
     // MARK: - Public Properties
     
-    public func configure(width model: Message) {
-        switch model.sender {
+    public func configure(width model: Message, sender: Sender) {
+        switch sender {
         case .me:
             leftImageView.isHidden = true
             rightImageView.isHidden = false
